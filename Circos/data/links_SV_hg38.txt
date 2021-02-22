@@ -1,0 +1,18 @@
+deletion1 hs21 41994799 41994799 z=9,color=lum90hs13
+deletion1 hs21 44361566 44361566 z=0,color=lum90hs13
+
+inversion hs21 44361566 44361566 z=20,color=dpyellow
+inversion hs21 43447107 43447107 z=10,color=dpyellow
+
+deletion2 hs21 43447107 43447107 z=0,color=lum80hs13
+deletion2 hs21 8204967 8204967 z=0,color=lum80hs13
+
+#Del_pArm hs21 1 1 z=10,color=red
+#Del_pArm hs21 8204967 8204967 z=0,color=red
+
+#inserted-cassette_pArm hs21 6160917 6160917 z=10,color=red
+#inserted-cassette_pArm hs21 6161064 6161064 z=0,color=red
+
+#inserted-cassette_qArm hs21 43377197 43377197 z=10,color=red
+#inserted-cassette_qArm hs21 43377345 43377345 z=0,color=red
+

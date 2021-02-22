@@ -1,0 +1,162 @@
+# circos.conf
+#perl ..\..\bin\circos -conf .\config11.txt -outputfile config11
+#add segmental duplication, ass wedge/highlight
+
+#karyotype 	= data/karyotype.human_config6.txt
+karyotype 	= data/karyotype.human.hg38_config10.txt
+
+
+chromosomes_display_default = no
+chromosomes                 = hs21
+chromosomes_units=1000000
+
+show_ticks          = yes
+show_tick_labels    = yes
+
+
+<plots>
+	<plot>
+		type  = text
+		color = black
+		file  = data/bands_hg38.txt
+
+		r0    = 0.93r
+		r1    = 1r
+
+		label_size = 40
+		label_font = condensed
+		label_parallel = yes
+
+		show_links     = no
+		link_dims      = 0p,2p,6p,2p,5p
+		link_thickness = 15p
+		link_color     = vdgrey
+		
+		<rules>
+			<rule>
+				condition  = var(start) > 11mb && var(end) < 35mb
+				#color      = blue
+				r0	  = 0.92r
+			</rule>
+
+		</rules>
+	</plot>
+	
+	<plot>
+		type  = text
+		color = black
+		file  = data/SV_label.txt
+
+		r0         = 0.795r
+		r1         = 0.9r+300p
+
+		label_size = 70
+		label_font = condensed
+		label_parallel = yes
+
+	</plot>
+</plots>
+
+
+<ticks>
+
+	chromosomes_display_default = yes
+	label_multiplier     = 1e-6
+	orientation          = out
+  	#radius               = dims(ideogram,radius_outer)
+  	radius               = 1r + 0.000005u
+ 	multiplier           = 1e-6
+	label_font		= bold
+
+# %d   - integer
+# %f   - float
+# %.1f - float with one decimal
+# %.2f - float with two decimals
+#
+# for other formats, see http://perldoc.perl.org/functions/sprintf.html
+
+	format           = %d
+	color = vdgrey
+
+
+  <tick>
+  	spacing = 5u
+	size = 35p
+	thickness = 13p
+	color = vvdgrey
+	show_label     = yes
+	label_size     = 50p
+	label_offset   = 10p
+  </tick>
+
+
+  
+  <tick>
+  	spacing = 1u
+  	size = 15p
+	thickness = 7p
+  </tick>
+
+</ticks>
+
+
+
+
+<highlights>
+	z = 0
+	fill_color = green
+
+		<highlight>
+			file       = data/SV_blocks.txt
+			r0         = 0.75r
+			r1         = 0.9r
+		</highlight>
+</highlights>
+
+
+
+<links>
+	<link>
+		file          = data/links_SV_hg38_config11.txt
+		radius        = 0.7r
+		bezier_radius = 0r
+		color         = green
+		thickness     = 20
+	</link>
+</links>
+
+<ideogram>
+ 	#Bands
+		show_bands            = yes
+		fill_bands            = yes
+		band_transparency     = 0
+
+	<spacing>
+		default = 0.005r
+	</spacing>
+
+		radius           = 0.80r
+		thickness        = 0.1r
+		fill             = yes
+		stroke_color     = vdgrey
+		stroke_thickness = 8p
+
+		show_label       = no
+		label_with_tag = yes
+		label_font       = default 
+		label_radius     = 1r + 0.05r
+		label_size       = 90
+		label_parallel   = yes
+		label_case     = upper
+</ideogram>
+
+<image>
+	<<include etc/image.conf>>
+</image>
+<fonts>
+	<<include etc/fonts.conf>>
+</fonts>
+
+<<include etc/colors_fonts_patterns.conf>>
+<<include etc/housekeeping.conf>>
+

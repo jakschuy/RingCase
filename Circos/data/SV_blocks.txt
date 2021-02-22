@@ -1,0 +1,6 @@
+hs21 41994799 43447106 deletion1 fill_color=lum90hs13
+hs21 43447107 44361566 inversion fill_color=dpyellow
+hs21 44361567 46709983 deletion2 fill_color=lum90hs13
+hs21 1 8204967 Del_pArm fill_color=lum80hs13
+hs21 6160917 6161064 inserted-cassette_pArm  fill_color=lred,r0=0.75r,r1=0.95r
+hs21 43377197 43377345 inserted-cassette_qArm  fill_color=lred,r0=0.75r,r1=0.95r
